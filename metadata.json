@@ -1,0 +1,6 @@
+{
+  "name": "MineGuard - Coal Mine Governance & Compliance Intelligence",
+  "description": "Centralized AI-enabled smart governance and statutory compliance monitoring platform for Coal India Limited and Indian coal mines (SIH 2026 PS 26024).",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
