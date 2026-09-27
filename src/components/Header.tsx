@@ -8,7 +8,8 @@ import {
   ShieldCheck, 
   Wifi, 
   WifiOff, 
-  Globe
+  Globe,
+  Radio
 } from 'lucide-react';
 import { UserRole } from '../types/mineguard';
 import { Language, translations } from '../utils/translations';
@@ -63,6 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'overview', label: t.navDashboard, icon: Building2 },
     { id: 'inspections', label: t.navInspections, icon: ClipboardCheck },
     { id: 'twin', label: t.navCompliance, icon: Layers },
+    { id: 'radar', label: t.navRadar, icon: Radio },
     { id: 'gis', label: t.navGis, icon: MapPin },
     { id: 'workflow', label: t.navCapa, icon: Clock },
     { id: 'records', label: t.navRecords, icon: ShieldCheck },

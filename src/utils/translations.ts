@@ -8,6 +8,7 @@ export interface Translations {
   navDashboard: string;
   navInspections: string;
   navCompliance: string;
+  navRadar: string;
   navGis: string;
   navCapa: string;
   navRecords: string;
@@ -45,6 +46,7 @@ export const translations: Record<Language, Translations> = {
     navDashboard: 'Dashboard',
     navInspections: 'Field Inspections',
     navCompliance: 'Statutory Compliance',
+    navRadar: 'Slope Radar & Siren',
     navGis: 'GIS Mine Map',
     navCapa: 'Corrective Actions (CAPA)',
     navRecords: 'Records & Audits',
@@ -80,6 +82,7 @@ export const translations: Record<Language, Translations> = {
     navDashboard: 'मुख्य पृष्ठ',
     navInspections: 'क्षेत्रीय निरीक्षण',
     navCompliance: 'सांविधिक अनुपालन',
+    navRadar: 'स्लोप रडार एवं सायरन',
     navGis: 'जीआईएस खदान मानचित्र',
     navCapa: 'सुधारात्मक कार्रवाई (CAPA)',
     navRecords: 'अभिलेख एवं ऑडिट',

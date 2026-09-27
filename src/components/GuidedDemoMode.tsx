@@ -48,7 +48,7 @@ export const TOUR_STEPS: GuidedTourStep[] = [
   {
     stepNumber: 2,
     title: 'Slope Stability Radar (GroundSAR-3D)',
-    targetTab: 'twin',
+    targetTab: 'radar',
     badge: 'Geotechnical Early-Warning',
     headline: 'Fukuzono Inverse-Velocity Prediction ($1/v \\to 0$)',
     instructions: [

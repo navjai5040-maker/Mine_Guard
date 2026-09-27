@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { OverviewDashboard } from './components/OverviewDashboard';
 import { ComplianceTwin } from './components/ComplianceTwin';
+import { SlopeStabilityRadar } from './components/SlopeStabilityRadar';
 import { GisRiskMap } from './components/GisRiskMap';
 import { FieldAppSimulator } from './components/FieldAppSimulator';
 import { WorkflowEscalation } from './components/WorkflowEscalation';
@@ -214,6 +215,10 @@ export default function App() {
 
         {activeTab === 'twin' && (
           <ComplianceTwin />
+        )}
+
+        {activeTab === 'radar' && (
+          <SlopeStabilityRadar />
         )}
 
         {activeTab === 'gis' && (
