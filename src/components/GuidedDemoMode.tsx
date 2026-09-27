@@ -52,8 +52,9 @@ export const TOUR_STEPS: GuidedTourStep[] = [
     badge: 'Geotechnical Early-Warning',
     headline: 'Fukuzono Inverse-Velocity Prediction ($1/v \\to 0$)',
     instructions: [
-      'In the right control panel, slide "Pore-Water Pressure" up or click "Simulate Monsoon Cloudburst (48 mm/h)".',
+      'In the control panel, slide rainfall up or click "Simulate Cloudburst (78 mm/hr)".',
       'Observe the Factor of Safety (FoS) drop below critical threshold 1.10 and velocity surge to >15 mm/h.',
+      'Hear the automated synthesized industrial evacuation siren sound (use the "Mute / Unmute Siren" button as needed).',
       'Notice the Fukuzono $1/v$ curve extrapolate directly to calculate time-to-collapse ($t_f$) and trigger the geofence evacuation perimeter.'
     ],
     keyHighlight: 'True predictive physics replacing reactive slope monitoring under CMR 2017 Reg. 106.'

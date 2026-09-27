@@ -11,13 +11,16 @@ import {
   ShieldAlert, 
   TrendingUp, 
   Volume2, 
+  VolumeX,
   Wind,
   Layers,
   ArrowRight,
   Flame,
   Zap,
-  Info
+  Info,
+  BellRing
 } from 'lucide-react';
+import { sirenPlayer } from '../utils/sirenAudio';
 
 export interface SlopeSensor {
   id: string;
@@ -38,6 +41,8 @@ export const SlopeStabilityRadar: React.FC = () => {
   const [activeAlarm, setActiveAlarm] = useState<boolean>(false);
   const [evacuationOrdered, setEvacuationOrdered] = useState<boolean>(false);
   const [exportNotice, setExportNotice] = useState<string | null>(null);
+  const [isSirenMuted, setIsSirenMuted] = useState<boolean>(false);
+  const [sirenAudible, setSirenAudible] = useState<boolean>(false);
 
   // Time-series data points for Inverse Velocity (Fukuzono model)
   const [radarSensors, setRadarSensors] = useState<SlopeSensor[]>([
@@ -115,6 +120,26 @@ export const SlopeStabilityRadar: React.FC = () => {
 
   const hasCriticalBench = radarSensors.some(s => s.status === 'critical');
 
+  // Control siren audio automatically when alarms/evacuation trigger
+  useEffect(() => {
+    if (activeAlarm || evacuationOrdered) {
+      sirenPlayer.startSiren();
+      setSirenAudible(true);
+    } else {
+      sirenPlayer.stopSiren();
+      setSirenAudible(false);
+    }
+
+    return () => {
+      sirenPlayer.stopSiren();
+    };
+  }, [activeAlarm, evacuationOrdered]);
+
+  const toggleSirenMute = () => {
+    const muted = sirenPlayer.toggleMute();
+    setIsSirenMuted(muted);
+  };
+
   const handleSimulateCloudburst = () => {
     setRainfallMmHr(78); // Monsoon cloudburst 78mm/hr
     setActiveAlarm(true);
@@ -124,10 +149,13 @@ export const SlopeStabilityRadar: React.FC = () => {
     setRainfallMmHr(12);
     setActiveAlarm(false);
     setEvacuationOrdered(false);
+    sirenPlayer.stopSiren();
+    setSirenAudible(false);
   };
 
   const handleDispatchEvacuation = () => {
     setEvacuationOrdered(true);
+    sirenPlayer.startSiren();
   };
 
   return (
@@ -150,6 +178,31 @@ export const SlopeStabilityRadar: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2 shrink-0">
+          {/* Siren Mute / Unmute Toggle Button */}
+          {sirenAudible && (
+            <button
+              onClick={toggleSirenMute}
+              className={`px-3 py-2 rounded-md text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm border ${
+                isSirenMuted 
+                  ? 'bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-300' 
+                  : 'bg-rose-50 text-rose-700 border-rose-300 hover:bg-rose-100 animate-pulse'
+              }`}
+              title={isSirenMuted ? 'Unmute evacuation siren audio' : 'Mute evacuation siren audio'}
+            >
+              {isSirenMuted ? (
+                <>
+                  <VolumeX className="w-4 h-4 text-slate-500" />
+                  <span>Unmute Siren</span>
+                </>
+              ) : (
+                <>
+                  <Volume2 className="w-4 h-4 text-rose-600 animate-bounce" />
+                  <span>Mute Siren</span>
+                </>
+              )}
+            </button>
+          )}
+
           {hasCriticalBench && !evacuationOrdered ? (
             <button
               onClick={handleDispatchEvacuation}
