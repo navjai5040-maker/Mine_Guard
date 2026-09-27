@@ -11,6 +11,7 @@ import { GisRiskMap } from './components/GisRiskMap';
 import { FieldAppSimulator } from './components/FieldAppSimulator';
 import { WorkflowEscalation } from './components/WorkflowEscalation';
 import { RecordsAudits } from './components/RecordsAudits';
+import { GuidedDemoMode } from './components/GuidedDemoMode';
 
 import { 
   INITIAL_OBSERVATIONS, 
@@ -238,6 +239,13 @@ export default function App() {
           />
         )}
       </main>
+
+      {/* Interactive Jury Guided Tour */}
+      <GuidedDemoMode
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        setUserRole={setUserRole}
+      />
 
       {/* Official Government of India Institutional Footer */}
       <footer className="mt-auto border-t border-slate-200 bg-white px-6 py-4 text-xs text-slate-500">
