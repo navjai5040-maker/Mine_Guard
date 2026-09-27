@@ -37,7 +37,7 @@ export const TOUR_STEPS: GuidedTourStep[] = [
     targetTab: 'overview',
     targetRole: 'ministry_official',
     badge: 'Ministry of Coal / CIL Apex',
-    headline: 'High-Level National Compliance Oversight',
+    headline: 'High-Level National Compliance Oversight & Parliamentary Q&A',
     instructions: [
       'Notice the real-time Statutory Compliance Index (94.2%) and FAFR metrics calculated across SECL Gevra operations.',
       'Click the golden banner "Apex Ministry Docket (8 CIL Subsidiaries & Parliament Q&A)" to view automated Lok Sabha Starred Question 418 answers and live CIL subsidiary risk matrices.',
@@ -47,17 +47,17 @@ export const TOUR_STEPS: GuidedTourStep[] = [
   },
   {
     stepNumber: 2,
-    title: 'Slope Stability Radar (GroundSAR-3D)',
+    title: 'Slope Stability Radar & Evacuation Siren',
     targetTab: 'radar',
     badge: 'Geotechnical Early-Warning',
-    headline: 'Fukuzono Inverse-Velocity Prediction ($1/v \\to 0$)',
+    headline: 'GroundSAR-3D & Fukuzono Inverse-Velocity Prediction (1/v → 0)',
     instructions: [
-      'In the control panel, slide rainfall up or click "Simulate Cloudburst (78 mm/hr)".',
-      'Observe the Factor of Safety (FoS) drop below critical threshold 1.10 and velocity surge to >15 mm/h.',
-      'Hear the automated synthesized industrial evacuation siren sound (use the "Mute / Unmute Siren" button as needed).',
-      'Notice the Fukuzono $1/v$ curve extrapolate directly to calculate time-to-collapse ($t_f$) and trigger the geofence evacuation perimeter.'
+      'Look at the top action bar and click the red button "Simulate Cloudburst (78 mm/hr)".',
+      'Listen to the realistic synthesized industrial evacuation siren sound through your speakers (sweeping 430Hz to 870Hz).',
+      'Click the pulsing "Mute Siren" button to silence or unmute the audio alarm instantly.',
+      'Notice the Factor of Safety (FoS) drop to critical levels (<1.10) and observe the Fukuzono 1/v curve estimate time-to-collapse (tf).'
     ],
-    keyHighlight: 'True predictive physics replacing reactive slope monitoring under CMR 2017 Reg. 106.'
+    keyHighlight: 'Predictive acoustic and geotechnical physics replacing reactive slope monitoring under CMR 2017 Reg. 106.'
   },
   {
     stepNumber: 3,
@@ -67,22 +67,22 @@ export const TOUR_STEPS: GuidedTourStep[] = [
     badge: 'CMR 2017 Reg. 43/48 Form IV',
     headline: 'Tamper-Proof Gas Interlock & Biometric Sealing',
     instructions: [
-      'Scroll to the "Statutory Shift Handover & Atmospheric Log (Form IV)" section.',
-      'Click "Simulate CO Gas Spike (>50 ppm)" to simulate hazardous carbon monoxide seepage.',
-      'Notice that the Shift Sign-off button is immediately LOCKED OUT by statutory safety interlocks.',
-      'Click "Reset Gas Sensors", check the statutory safety inspection boxes, enter PIN 4491, and seal the register into a cryptographic SHA-256 block.'
+      'Scroll down to the "Statutory Shift Handover & Atmospheric Log (Form IV)" card.',
+      'Click "Simulate CO Gas Spike (>50 ppm)" to trigger dangerous carbon monoxide levels.',
+      'Observe how the Shift Sign-off button is immediately locked out by statutory safety interlocks.',
+      'Click "Reset Gas Sensors", check the statutory safety inspection boxes, enter PIN 4491, and sign off the shift into a cryptographic SHA-256 block.'
     ],
-    keyHighlight: 'Eliminates forged paper handover books and enforces personal statutory accountability under Section 72A.'
+    keyHighlight: 'Eliminates forged paper handover books and enforces personal statutory accountability under Mines Act Section 72A.'
   },
   {
     stepNumber: 4,
-    title: 'Offline Field App & Form IX PDF Report',
+    title: 'Offline Field App & Form IX PDF Dossier',
     targetTab: 'inspections',
     badge: 'Field Inspections & Audits',
-    headline: 'Offline-First Logging & Government-Standard PDF',
+    headline: 'Offline-First Logging & Government-Standard PDF Generation',
     instructions: [
-      'Toggle the "Online/Offline" switch in the header to observe offline queueing resilience.',
-      'Look at the field observation form with automatic GPS, bench level, and AI regulation mapping (e.g. CMR Reg 106).',
+      'Toggle the "Online/Offline" indicator switch in the top-right header to test offline field queueing.',
+      'Examine the field observation form with automatic GPS, bench elevation, and AI regulation mapping (e.g. CMR Reg 106).',
       'Click the "Generate PDF Report" button in the table header.',
       'Preview the official DGMS Form IX Statutory Incident Dossier and click "Print / Save PDF" to test instant vector PDF generation.'
     ],
@@ -90,16 +90,29 @@ export const TOUR_STEPS: GuidedTourStep[] = [
   },
   {
     stepNumber: 5,
-    title: 'GIS Spatial Twin & 3-Tier CAPA Escalation',
+    title: 'GIS Spatial Twin & In-Pit Telemetry',
     targetTab: 'gis',
-    badge: 'Spatial Intelligence & SLAs',
-    headline: 'Autonomous Escalation & Khanan Prahari Correlation',
+    badge: 'Spatial Intelligence & Sensors',
+    headline: 'Bench Geometry, Real-Time Piezometers & Drone Flyovers',
     instructions: [
-      'Click on different benches (e.g., North Pit Bench 3 or West Pit Face 4) to view spatial sensor feeds and radar vectors.',
-      'Switch to the "CAPA & Workflow" tab to view the 3-Tier Escalation SLA countdown timers (Shift Overman -> Mine Agent -> General Manager).',
-      'Notice how unrectified highwall hazards escalate automatically before regulatory deadlines elapse.'
+      'Click on different mining benches (e.g., North Pit Bench 3 or West Pit Face 4) to view spatial telemetry.',
+      'Inspect live sensor readings: Piezometer pore pressure (kPa), extensometer displacement (mm), and GroundSAR radar vectors.',
+      'Click "Dispatch Inspection" on any high-risk zone to automatically pre-populate a field inspection order.'
     ],
-    keyHighlight: 'Complete closed-loop hazard remediation with photographic evidence verification.'
+    keyHighlight: 'Interactive spatial twin correlates ground sensors directly to geocoded DGMS compliance boundaries.'
+  },
+  {
+    stepNumber: 6,
+    title: '3-Tier CAPA Escalation & Blockchain Ledger',
+    targetTab: 'workflow',
+    badge: 'Autonomous SLAs & Cryptography',
+    headline: 'Automated Regulatory Escalation & SHA-256 Audit Trail',
+    instructions: [
+      'Click "Advance SLA (+12 Hours)" to simulate passage of time and watch statutory SLAs count down.',
+      'Notice how unresolved critical hazards escalate up the chain: Shift Overman → Mine Agent → DGMS / CIL Technical Director.',
+      'Switch to the "Records & Audits" tab to verify the cryptographic SHA-256 Merkle blockchain ledger securing every inspection record against tampering.'
+    ],
+    keyHighlight: 'Closes the loop between hazard identification, corrective action enforcement, and immutable forensic auditability.'
   }
 ];
 
@@ -171,7 +184,7 @@ export const GuidedDemoMode: React.FC<GuidedDemoModeProps> = ({
             <Sparkles className="w-4 h-4 text-slate-950 animate-spin" style={{ animationDuration: '4s' }} />
             <span>Interactive Walkthrough</span>
             <span className="bg-slate-950 text-amber-300 text-[10px] font-mono px-1.5 py-0.5 rounded-full">
-              5 Steps
+              {TOUR_STEPS.length} Steps
             </span>
           </button>
         </div>
